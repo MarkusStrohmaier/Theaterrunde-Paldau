@@ -1,38 +1,70 @@
 const siteData = {
     termine: [
         {
-            titel: "Der sprechende Vorhang",
-            datum: "Samstag, 12. Juni 2025",
-            uhrzeit: "19:00 Uhr",
-            ort: "Vereinssaal Musterspiel",
-            bildKey: "vorhang",
-            status: "Nächster Termin",
-            tel: "+436641234567",
-            mail: "tickets@theaterrunde.at"
+            titel: "Im Knast ist (k)ein Zimmer frei",
+            datum: "Freitag, 23. Jänner 2026",
+            uhrzeit: "19:30 Uhr",
+            ort: "Momentum Paldau",
+            bildKey: "knast",
+            status: "Premiere",
+            tel: "067764769876",
+            mail: "info@theaterrunde-paldau.at",
+            preis: "Eintritt: € 12,00 / Kinder: € 3,00",
+            hinweis: "Nach der Premiere lädt die Theaterrunde auf 1 Glas Sekt ein!"
         },
         {
-            titel: "Premiere: Die Goldene Bühne",
-            datum: "Freitag, 20. Juli 2025",
-            uhrzeit: "20:00 Uhr",
-            ort: "Stadttheater Graz, Hauptsaal",
-            bildKey: "buehne",
+            titel: "Im Knast ist (k)ein Zimmer frei",
+            datum: "Samstag, 24. Jänner 2026",
+            uhrzeit: "19:30 Uhr",
+            ort: "Momentum Paldau",
+            bildKey: "knast",
             status: "Vorverkauf",
-            tel: "+436641234567",
-            mail: "info@theaterrunde.at"
+            tel: "067764769876",
+            mail: "info@theaterrunde-paldau.at"
         },
         {
-            titel: "Premiere: Die Goldene Bühne",
-            datum: "Freitag, 20. Juli 2025",
-            uhrzeit: "20:00 Uhr",
-            ort: "Stadttheater Graz, Hauptsaal",
-            bildKey: "buehne",
+            titel: "Im Knast ist (k)ein Zimmer frei",
+            datum: "Sonntag, 25. Jänner 2026",
+            uhrzeit: "14:30 Uhr",
+            ort: "Momentum Paldau",
+            bildKey: "knast",
             status: "Vorverkauf",
-            tel: "+436641234567",
-            mail: "info@theaterrunde.at"
+            tel: "067764769876",
+            mail: "info@theaterrunde-paldau.at"
+        },
+        {
+            titel: "Im Knast ist (k)ein Zimmer frei",
+            datum: "Freitag, 30. Jänner 2026",
+            uhrzeit: "19:30 Uhr",
+            ort: "Momentum Paldau",
+            bildKey: "knast",
+            status: "Vorverkauf",
+            tel: "067764769876",
+            mail: "info@theaterrunde-paldau.at"
+        },
+        {
+            titel: "Im Knast ist (k)ein Zimmer frei",
+            datum: "Samstag, 31. Jänner 2026",
+            uhrzeit: "19:30 Uhr",
+            ort: "Momentum Paldau",
+            bildKey: "knast",
+            status: "Vorverkauf",
+            tel: "067764769876",
+            mail: "info@theaterrunde-paldau.at"
+        },
+        {
+            titel: "Im Knast ist (k)ein Zimmer frei",
+            datum: "Sonntag, 01. Februar 2026",
+            uhrzeit: "14:30 Uhr",
+            ort: "Momentum Paldau",
+            bildKey: "knast",
+            status: "Vorverkauf",
+            tel: "067764769876",
+            mail: "info@theaterrunde-paldau.at"
         }
     ],
     galerie: [
-        { id: "sommerfest", titel: "Sommerfest 2024", vorschaubild: "https://images.unsplash.com/photo-1533561093092-236c68362c84?auto=format&fit=crop&q=80&w=500" },
-        { id: "backstage", titel: "Hinter den Kulissen", vorschaubild: "https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&q=80&w=500" }
+        { id: "proben", titel: "Proben 2026", vorschaubild: "https://images.unsplash.com/photo-1503095396549-8072f6f39002?auto=format&fit=crop&q=80&w=500" },
+        { id: "chronik", titel: "Blick zurück", vorschaubild: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&q=80&w=500" }
     ]
 };
