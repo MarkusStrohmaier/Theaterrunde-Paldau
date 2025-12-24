@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theaterrunde - Vorhang auf!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'brand-red': '#dc2626', 'brand-amber': '#f59e0b' } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-stone-50 text-gray-800 sans">
+
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-brand-red">
+        <div class="container mx-auto px-6 max-w-7xl flex justify-between items-center py-4">
+            <a onclick="renderPage('Home')" class="flex items-center space-x-3 cursor-pointer group">
+                <i class="fas fa-theater-masks text-4xl text-brand-red group-hover:rotate-12 transition duration-300"></i>
+                <span class="serif text-3xl font-bold tracking-tight">Theater<span class="text-brand-red">runde<span class="serif text-3xl font-bold tracking-tight"> Paldau</span></span>
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 font-bold text-gray-600">
+                    <li><a onclick="renderPage('Home')" class="nav-link">Home</a></li>
+                    <li><a onclick="renderPage('Termine')" class="nav-link">Termine</a></li>
+                    <li><a onclick="renderPage('Galerie')" class="nav-link">Galerie</a></li>
+                    <li><a onclick="renderPage('Chronik')" class="nav-link">Chronik</a></li>
+                    <li><a onclick="renderPage('Kontakt')" class="nav-link font-bold text-brand-red border-l-2 border-brand-red pl-4">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="content-area" class="min-h-screen"></main>
+
+    <div id="lightbox-overlay" class="lightbox-overlay">
+        <div class="relative w-full max-w-5xl px-4 flex flex-col items-center">
+            <button onclick="closeLightbox()" class="absolute -top-16 right-4 text-6xl text-white hover:text-brand-amber transition">&times;</button>
+            <button onclick="changeImage(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-brand-amber px-4 z-50">❮</button>
+            <button onclick="changeImage(1)" class="absolute right-0 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-brand-amber px-4 z-50">❯</button>
+            <img id="lightbox-img" src="" class="lightbox-content border-4 border-white rounded-xl shadow-2xl">
+            <div class="mt-6 text-center text-white">
+                <p id="lightbox-caption" class="text-2xl font-bold serif"></p>
+                <p id="lightbox-counter" class="text-brand-amber font-semibold mt-2 tracking-widest"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-stone-900 text-white pt-16 pb-8 border-t-8 border-brand-amber">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h4 class="serif text-2xl font-bold text-brand-amber mb-6">Theaterrunde</h4>
+                    <p class="text-stone-400 leading-relaxed mb-6">Wir sind eine leidenschaftliche Gruppe von Laiendarstellern, die das kulturelle Leben in unserer Region seit vielen Jahren bereichert. Bei uns steht die Freude am Spiel im Vordergrund.</p>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="text-white hover:text-brand-red transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-brand-red transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-brand-red transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="serif text-xl font-bold mb-6 border-b border-stone-700 pb-2 text-brand-red">Navigation</h4>
+                    <ul class="space-y-3 text-stone-300">
+                        <li><a onclick="renderPage('Home')" class="hover:text-brand-amber cursor-pointer flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i> Startseite</a></li>
+                        <li><a onclick="renderPage('Termine')" class="hover:text-brand-amber cursor-pointer flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i> Aktueller Spielplan</a></li>
+                        <li><a onclick="renderPage('Galerie')" class="hover:text-brand-amber cursor-pointer flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i> Unsere Bildergalerie</a></li>
+                        <li><a onclick="renderPage('Chronik')" class="hover:text-brand-amber cursor-pointer flex items-center"><i class="fas fa-chevron-right mr-2 text-xs"></i> Die Vereinsgeschichte</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="serif text-xl font-bold mb-6 border-b border-stone-700 pb-2 text-brand-red">Kontakt & Anfahrt</h4>
+                    <ul class="space-y-4 text-stone-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-amber"></i>
+                            <span>Theatergasse 17/2<br>8010 Graz, Österreich</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-amber"></i>
+                            <a href="tel:+436641234567" class="hover:text-white transition">+43 664 123 45 67</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-amber"></i>
+                            <a href="mailto:info@theaterrunde.at" class="hover:text-white transition font-bold">info@theaterrunde.at</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-stone-800 p-6 rounded-2xl border-l-4 border-brand-amber">
+                    <h4 class="serif text-xl font-bold mb-4 text-white">Mitmachen?</h4>
+                    <p class="text-sm text-stone-400 mb-4">Du hast Talent oder möchtest uns hinter den Kulissen unterstützen? Wir suchen immer neue Gesichter!</p>
+                    <a onclick="renderPage('Kontakt')" class="inline-block bg-brand-red text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-red-700 transition cursor-pointer">Jetzt bewerben</a>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-stone-500">
+                <p>&copy; 2025 Theaterrunde Musterspiel. Alle Rechte vorbehalten.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a onclick="renderPage('Kontakt')" class="hover:text-white cursor-pointer transition">Impressum</a>
+                    <a onclick="renderPage('Kontakt')" class="hover:text-white cursor-pointer transition">Datenschutz</a>
+                    <a href="#" class="hover:text-white transition">Barrierefreiheit</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="images.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
